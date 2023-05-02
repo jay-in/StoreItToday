@@ -2,6 +2,7 @@ import DStorage from '../abis/DStorage.json'
 import React, { Component } from 'react';
 import Navbar from './Navbar'
 import Main from './Main'
+import DownloadForm from './DownloadForm';
 import Web3 from 'web3';
 import './App.css';
 import { get } from 'babel-register/lib/cache';
@@ -90,15 +91,15 @@ class App extends Component {
 
   uploadFile = async (description) => {
     console.log("Submitting file to IPFS...")
-   
+   let cid;
    const m =  await ipfs.add(this.state.buffer, (error, result) => {
-      console.log('IPFS result', m.cid)
-      if(result){
+     if(result){
+       console.log('IPFS result', m.cid)
         console.log("success")
         console.log(m.cid)
       }
       if(error) {
-        console.error(error)
+        console.error("error : "+error)
         return
       }
 
@@ -119,9 +120,12 @@ class App extends Component {
         this.setState({loading: false})
       })
     })
-    alert("fle has been uploaded")
-
-
+    let fi = m.cid._baseCache
+    const fiIter = fi.entries()
+    const cs = fiIter.next().value
+    const result = cs[1]
+    console.log(result)
+    prompt("Copy to clipboard: Ctrl+C ",result);
   }
 
   getFile = async() => {
@@ -140,7 +144,6 @@ class App extends Component {
       let cid = itr.cid
       cid = String(cid)
       files.push("https://ipfs.io/ipfs/"+cid)
-      console.log(cid)
     }
     return files
   }
@@ -185,6 +188,7 @@ class App extends Component {
               uploadFile={this.uploadFile}
             />
         }
+        <DownloadForm/>
        <div className="adam1">
          
         

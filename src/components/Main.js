@@ -82,19 +82,13 @@ class Main extends Component {
                   </form>
               </div>
               <p>&nbsp;</p>
-              <table className="table table-striped table-hover" style={{ width: '1000px', maxHeight: '450px'}}>
+              {/* <table className="table table-striped table-hover" style={{ width: '1000px', maxHeight: '450px'}}>
                 <thead style={{ 'fontSize': '15px' }}>
                   <tr className="bg-dark text-white">
                     
                     <th scope="col" style={{ width: '230px'}}>Description</th>
                     <th scope="col" style={{ width: '200px'}}>File</th>
-                    {/* <th scope="col" style={{ width: '120px'}}>Type</th>
-                    <th scope="col" style={{ width: '90px'}}>Size</th>
-                    <th scope="col" style={{ width: '90px'}}>Date</th>
-                    <th scope="col" style={{ width: '120px'}}>Uploader/view</th>
-                    <th scope="col" style={{ width: '120px'}}>Hash/view/get</th>
-                    <th scope="col" style={{ width: '120px'}}>Qr code</th>
-                    <th scope="col" style={{ width: '120px'}}>Share!</th> */}
+                    
                   </tr>
                 </thead>
                 { this.props.files.map((file, key) => {
@@ -104,45 +98,13 @@ class Main extends Component {
                         
                         <td>{file.fileDescription}</td>
                         <td><a href={file} target="_blank">{file}</a></td>
-                        {/* <td>{file.fileType}</td>
-                        <td>{convertBytes(file.fileSize)}</td>
-                        <td>{moment.unix(file.uploadTime).format('h:mm:ss A M/D/Y')}</td>
-                        <td>
-                          <a
-                            href={"https://etherscan.io/address/" + file.uploader}
-                            rel="noopener noreferrer"
-                            target="_blank">
-                            {file.uploader.substring(0,10)}...
-                          </a>
-                         </td>
-                         
-                         <td>
-                          <a
-                            href={"https://ipfs.infura.io/ipfs/" + file.fileHash}
-                            rel="noopener noreferrer"
-                            target="_blank">
-                            {file.fileHash.substring(0,10)}...
-                          </a>
-                         </td>
-                        <td>
-                          <img
-                            src={"https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://ipfs.infura.io/ipfs/"  + file.fileHash}
-                            >
-                      
-                          </img>
-                        </td>
-                        <td>
-                        <a href={"whatsapp://send?text=https://ipfs.infura.io/ipfs/" + file.fileHash} data-action="share/whatsapp/share"> <img src="https://cdn-icons.flaticon.com/png/512/3670/premium/3670051.png?token=exp=1638032014~hmac=1458dfcedc3ab96e295096e579e6956a" height="20" width="20"></img> </a>
                         
-                        <a href={"http://www.twitter.com/share?url=https://ipfs.infura.io/ipfs/" + file.fileHash} data-action="share/whatsapp/share"> <img src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png" height="20" width="20"></img> </a>
-                        </td> */}
-
 
                       </tr>
                     </thead>
                   )
                 })}
-              </table>
+              </table> */}
             </div>
           </main>
         </div>
